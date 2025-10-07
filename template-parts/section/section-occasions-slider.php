@@ -88,7 +88,7 @@ $total_posts = 0
         <?php endwhile; ?>
     </div>
 
-    <div class="absolute bottom-[5.5rem] z-10 text-white inset-x-0 container--lg lg:bottom-28">
+    <div class="absolute bottom-[5.5rem] z-8 text-white inset-x-0 container--lg lg:bottom-28">
         <div class="w-full max-w-52 mx-auto flex items-center justify-center gap-3 lg:mr-0 lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:max-w-fit">
             <div class="lg:row-span-1 lg:col-start-2">
                 <button type="button" class="swiper-button-prev occasions-slider__button occasions-slider__button--prev">
