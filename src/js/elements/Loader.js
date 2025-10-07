@@ -12,118 +12,117 @@ class Loader {
     this.pageWeight = 0.1;
     this.pageLoaded = false;
     this.percentage = 0;
-    this.completeDelay = 1.5;
+    //this.completeDelay = 0;
 
-    this.isMobile = mediaQueryHook('(max-width: 1024px)');
+    // this.isMobile = mediaQueryHook('(max-width: 1024px)');
 
-    this.loaderDOM = document.querySelector('[data-loader]');
-    this.loaderContentDOM = document.querySelector('[data-loader-content]');
+    // this.loaderDOM = document.querySelector('[data-loader]');
+    // this.loaderContentDOM = document.querySelector('[data-loader-content]');
     this.percentageDOM = document.querySelector('[data-loader-percentage]');
     this.phraseDOM = document.querySelector('[data-loader-phrase]');
-    this.loaderWrapTopDOM = document.querySelector('[data-loader-wrap-top]');
-    this.loaderWrapBottomDOM = document.querySelector('[data-loader-wrap-bottom]');
+    // this.loaderWrapTopDOM = document.querySelector('[data-loader-wrap-top]');
+    // this.loaderWrapBottomDOM = document.querySelector('[data-loader-wrap-bottom]');
 
     // Initial fade-in animation
-    this.gsapLibrary.to(this.loaderContentDOM, {
-      opacity: 1,
-      duration: 0.5,
-      ease: 'power2.out',
-    });
+    // this.gsapLibrary.to(this.loaderContentDOM, {
+    //   opacity: 1,
+    //   duration: 0.5,
+    //   ease: 'power2.out',
+    // });
 
     // Get all internal links that don't have target="_blank" and don't have a hash
-    const internalLinks = document.querySelectorAll('a:not([target="_blank"]):not([href*="#"])');
-
+    // const internalLinks = document.querySelectorAll('a:not([target="_blank"]):not([href*="#"])');
     // Add click event listeners to each link
-    internalLinks.forEach((link) => {
-      link.addEventListener('click', (e) => {
-        if (link.hostname !== window.location.hostname) {
-          return;
-        }
+    // internalLinks.forEach((link) => {
+    //   link.addEventListener('click', (e) => {
+    //     if (link.hostname !== window.location.hostname) {
+    //       return;
+    //     }
 
-        e.preventDefault();
-        this.showForTransition(link.href);
-      });
-    });
+    //     e.preventDefault();
+    //     this.showForTransition(link.href);
+    //   });
+    // });
   }
 
-  showForTransition(nextPageUrl) {
-    const tl = this.gsapLibrary.timeline();
+  // showForTransition(nextPageUrl) {
+  //   const tl = this.gsapLibrary.timeline();
 
-    const height = this.isMobile ? '5vh' : '20vh';
+  //   const height = this.isMobile ? '5vh' : '20vh';
 
-    tl.fromTo(
-      this.loaderDOM,
-      {
-        duration: 0.3,
-        ease: 'power4.inOut',
-        y: '100%',
-      },
-      {
-        y: '0%',
-        onComplete: () => {
-          window.location.href = nextPageUrl;
-        },
-      },
-      0
-    );
+  //   tl.fromTo(
+  //     this.loaderDOM,
+  //     {
+  //       duration: 0.3,
+  //       ease: 'power4.inOut',
+  //       y: '100%',
+  //     },
+  //     {
+  //       y: '0%',
+  //       onComplete: () => {
+  //         window.location.href = nextPageUrl;
+  //       },
+  //     },
+  //     0
+  //   );
 
-    tl.to(
-      this.loaderWrapTopDOM,
-      {
-        duration: 0.3,
-        ease: 'power4.inOut',
-        height,
-      },
-      0
-    );
-  }
+  //   tl.to(
+  //     this.loaderWrapTopDOM,
+  //     {
+  //       duration: 0.3,
+  //       ease: 'power4.inOut',
+  //       height,
+  //     },
+  //     0
+  //   );
+  // }
 
-  close() {
-    if (this.loaderDOM) {
-      // Dispatch custom event when isLoaded becomes true
-      window.dispatchEvent(new Event('appLoaded'));
+  // close() {
+  //   if (this.loaderDOM) {
+  //     window.dispatchEvent(new Event('appLoaded'));
+  // Dispatch custom event when isLoaded becomes true
+      
+  //     const tl = this.gsapLibrary.timeline();
 
-      const tl = this.gsapLibrary.timeline();
+  //     tl.to(
+  //       this.loaderDOM,
+  //       {
+  //         duration: 0.75,
+  //         ease: 'power4.inOut',
+  //         y: '-100%',
+  //         onComplete: () => {
+  //           document.body.classList.remove('disabled');
+  //           document.body.classList.remove('app-loading');
 
-      tl.to(
-        this.loaderDOM,
-        {
-          duration: 0.75,
-          ease: 'power4.inOut',
-          y: '-100%',
-          onComplete: () => {
-            document.body.classList.remove('disabled');
-            document.body.classList.remove('app-loading');
+  //           this.gsapLibrary.killTweensOf(this.loaderDOM);
+  //           this.loaderDOM.classList.add('loader_component--bottom-to-top');
+  //         },
+  //       },
+  //       0
+  //     );
 
-            this.gsapLibrary.killTweensOf(this.loaderDOM);
-            this.loaderDOM.classList.add('loader_component--bottom-to-top');
-          },
-        },
-        0
-      );
+  //     tl.to(
+  //       this.loaderContentDOM,
+  //       {
+  //         duration: 0.5,
+  //         ease: 'power4.inOut',
+  //         opacity: 0,
+  //       },
+  //       0
+  //     );
 
-      tl.to(
-        this.loaderContentDOM,
-        {
-          duration: 0.5,
-          ease: 'power4.inOut',
-          opacity: 0,
-        },
-        0
-      );
-
-      tl.to(
-        this.loaderWrapBottomDOM,
-        {
-          delay: 0.2,
-          duration: 0.75,
-          ease: 'power4.inOut',
-          height: '0',
-        },
-        0
-      );
-    }
-  }
+  //     tl.to(
+  //       this.loaderWrapBottomDOM,
+  //       {
+  //         delay: 0.2,
+  //         duration: 0.75,
+  //         ease: 'power4.inOut',
+  //         height: '0',
+  //       },
+  //       0
+  //     );
+  //   }
+  // }
 
   updatePercentage() {
     // Calculate target percentage based on components and page load
@@ -133,7 +132,7 @@ class Loader {
 
     // Animate the change from current percentage to targetPercentage gradually
     this.gsapLibrary.to(this, {
-      duration: 0.5, // Adjust duration as needed
+      duration: 0,
       percentage: targetPercentage,
       ease: 'power1.out',
       onUpdate: () => {
@@ -154,12 +153,13 @@ class Loader {
             this.gsapLibrary.to(this.phraseDOM, {
               opacity: 1,
               y: 0,
-              duration: 0.8,
+              duration: 0,
             });
           }
 
           this.gsapLibrary.delayedCall(this.completeDelay, () => {
-            this.close();
+            // this.close();
+            window.dispatchEvent(new Event('appLoaded'));
           });
         }
       },
@@ -182,3 +182,4 @@ class Loader {
 }
 
 export default Loader;
+

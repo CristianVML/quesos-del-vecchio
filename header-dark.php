@@ -43,15 +43,15 @@ $author = $additional_information['author'];
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class("relative bg-custom-grey text-custom-black_light font-figtree font-normal antialiased disabled app-loading"); ?>>
+<body <?php body_class("relative bg-custom-grey text-custom-black_light font-figtree font-normal antialiased "); ?>>
 <?php wp_body_open(); ?>
-<?php include_once('template-parts/loader.php'); ?>
+<?php //include_once('template-parts/loader.php'); ?>
 <div id="page" class="flex flex-col">
 	<a class="skip-link screen-reader-text" href="#primary">Saltar al contenido</a>
 
 	<header id="main-header" class="fixed top-0 inset-x-0 z-50 header header--dark">
 		<div class="container">
-			<div class="py-4 flex justify-between items-center lg:py-12 lg:pb-0 header_container">
+			<div class="py-4 flex justify-between items-center lg:py-6 header_container">
 				<div class="">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="block max-w-44 lg:max-w-48 header_logo" aria-label="Ir al inicio">
 						<img src="<?php echo $main_logo['url']; ?>" class="" alt="<?php bloginfo( 'name' ); ?>" width="192" height="56" />
