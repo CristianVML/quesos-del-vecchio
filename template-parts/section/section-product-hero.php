@@ -110,7 +110,7 @@ $nutritional_table = $nutritional_info["nutritional_table"];
                                     </p>
     
                                     <p class="text-blue text-sm tracking-tight font-semibold">
-                                        Valor diario*
+                                        Por Porción
                                     </p>
                                 </div>
     
