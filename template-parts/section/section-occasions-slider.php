@@ -90,7 +90,7 @@ $total_posts = 0
 
     <div class="absolute bottom-[5.5rem] z-8 text-white inset-x-0 container--lg lg:bottom-28">
         <div class="w-full max-w-52 mx-auto flex items-center justify-center gap-3 lg:mr-0 lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:max-w-fit">
-            <div class="lg:row-span-1 lg:col-start-2">
+            <div class="z-10 lg:row-span-1 lg:col-start-2">
                 <button type="button" class="swiper-button-prev occasions-slider__button occasions-slider__button--prev">
                     <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6 1L1 6L6 11" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
@@ -110,7 +110,7 @@ $total_posts = 0
                     <?php echo str_pad($total_posts, 2, '0', STR_PAD_LEFT); ?>
                 </span>
             </div>
-            <div class="lg:row-span-1 lg:col-start-2">
+            <div class="z-10 lg:row-span-1 lg:col-start-2">
                 <button type="button" class="swiper-button-next occasions-slider__button occasions-slider__button--next">
                     <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6 1L1 6L6 11" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
