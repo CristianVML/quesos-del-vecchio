@@ -120,14 +120,12 @@ $author = $additional_information['author'];
 						</a>
 					<?php endif; ?>
 
-					<?php if ( isset( $privacy_policy[0] ) && !empty( $privacy_policy[0]->post_content ) ): 
-						$privacy_policy_url = get_permalink( $privacy_policy[0]->ID );
-					?>
-						<a href="<?php echo $privacy_policy_url; ?>" class="max-w-fit" aria-label="Política de privacidad" data-animation-fade-in-stagger-item>
+					<?php if ( !empty( $privacy_policy ) ): ?>
+						<a href="<?php echo $privacy_policy; ?>" class="max-w-fit" target="_blank" aria-label="Política de privacidad" data-animation-fade-in-stagger-item>
 							Política de privacidad
 						</a>
 					<?php endif; ?>
-	
+
 					<?php if ( ! empty( $author ) ): ?>
 						<div class="rich-text md:ml-auto footer__author" data-animation-fade-in-stagger-item>
 							<?php echo $author; ?>
