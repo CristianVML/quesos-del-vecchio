@@ -1,8 +1,8 @@
-import { mediaQueryHook } from '../utils/mediaQuery';
-
 const CLASSNAMES = {
   SLIDER_CONTAINER: '.locations-slider__swiper',
   PAGINATION: '.locations-slider__pagination',
+  NEXT: '.locations-slider__next',
+  PREV: '.locations-slider__prev',
 };
 
 class LocationsSlider {
@@ -10,19 +10,23 @@ class LocationsSlider {
     this.app = app;
     this.container = container;
 
-    this.isMobile = mediaQueryHook('(max-width: 1024px)');
-
     // Slider container
     this.sliderContainer = container.querySelector(CLASSNAMES.SLIDER_CONTAINER);
     this.paginationContainer = container.querySelector(CLASSNAMES.PAGINATION);
-    // Listen for appLoaded event
+    this.nextButton = container.querySelector(CLASSNAMES.NEXT);
+    this.prevButton = container.querySelector(CLASSNAMES.PREV);
+
     window.addEventListener('appLoaded', this.initCarousel.bind(this));
   }
 
   initCarousel() {
     // Initialize Embla Carousel
     this.swiper = new window.$APP.Swiper(this.sliderContainer, {
-      modules: [window.$APP.Swiper.EffectCoverflow, window.$APP.Swiper.Pagination],
+      modules: [
+        window.$APP.Swiper.EffectCoverflow,
+        window.$APP.Swiper.Pagination,
+        window.$APP.Swiper.Navigation,
+      ],
       effect: 'coverflow',
       grabCursor: true,
       slidesPerView: 'auto',
@@ -36,6 +40,10 @@ class LocationsSlider {
       pagination: {
         el: this.paginationContainer,
         clickable: true,
+      },
+      navigation: {
+        nextEl: this.nextButton,
+        prevEl: this.prevButton,
       },
     });
   }
