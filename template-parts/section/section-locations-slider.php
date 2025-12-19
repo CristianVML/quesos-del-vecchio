@@ -32,7 +32,7 @@
                 </a>
             </div>
 
-            <div class="swiper locations-slider__swiper">
+            <div class="swiper locations-slider__swiper relative">
                 <div class="swiper-wrapper">
                     <?php foreach ($locations as $location) : 
                         setup_postdata($location);
@@ -68,6 +68,10 @@
                 </div>
 
                 <div class="locations-slider__pagination"></div>
+                <div class="locations-slider__navigation">
+                    <div class="swiper-button-prev locations-slider__prev"></div>
+                    <div class="swiper-button-next locations-slider__next"></div>
+                </div>
             </div>
 
             <div class="flex justify-center lg:hidden">

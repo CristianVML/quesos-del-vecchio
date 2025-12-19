@@ -76,7 +76,7 @@ $locations = get_sub_field('locations');
                             $link_url = $link_data['url'];
                             $link_title = $link_data['title'];
                         ?>
-                            <a href="<?php echo esc_url($link_url); ?>" class="block w-full text-blue bg-orange mt-4 rounded-[12.5rem] py-4 px-[1.125rem] text-sm font-medium tracking-tight text-center lg:max-w-fit lg:px-6">
+                            <a href="<?php echo esc_url($link_url); ?>" target="_blank" class="block w-full text-blue bg-orange mt-4 rounded-[12.5rem] py-4 px-[1.125rem] text-sm font-medium tracking-tight text-center lg:max-w-fit lg:px-6">
                                 <?php echo esc_html($link_title ? $link_title : '¿CÓMO LLEGAR?'); ?>
                             </a>
                         <?php endif; ?>
@@ -133,7 +133,7 @@ $locations = get_sub_field('locations');
                                     <?php echo $schedule; ?>
                                 </p>
 
-                                <a href="<?php the_permalink(); ?>" class="block w-full text-blue bg-orange mt-4 rounded-[12.5rem] py-4 px-[1.125rem] text-sm font-medium tracking-tight text-center lg:max-w-fit lg:px-6" target="_blank">
+                                <a href="<?php the_permalink(); ?>" target="_blank" class="block w-full text-blue bg-orange mt-4 rounded-[12.5rem] py-4 px-[1.125rem] text-sm font-medium tracking-tight text-center lg:max-w-fit lg:px-6" target="_blank">
                                     ¿CÓMO LLEGAR?
                                 </a>
                             </div>
