@@ -43,19 +43,20 @@ $author = $additional_information['author'];
 					</figure>
 
 					<div>
-						<p data-animation-split-text class="font-gazpacho text-[2rem] tracking-tight text-blue font-medium leading-snug lg:text-[3.5rem]">
+						<p data-animation-split-text class="mb-8 font-gazpacho text-[2rem] tracking-tight text-blue font-medium leading-snug lg:text-[3.5rem]">
 							<?php echo $footer_text; ?>
 						</p>
-	
-						<form class="mt-6 footer__form" data-animation-fade-in>
-							<input type="email" placeholder="Suscríbete y recibe novedades" class="" />
-							<button class="" type="submit" aria-label="Enviar">
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M5 12H19" stroke="#F5E6D2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-									<path d="M12 5L19 12L12 19" stroke="#F5E6D2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</button>
-						</form>
+						<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+						<div class="hs-form-wrapper">
+							<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+								<script>
+								hbspt.forms.create({
+									portalId: "47675528",
+									formId: "41222545-d2fc-43ae-8c70-563a93854dca",
+									region: "na1"
+								});
+								</script>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -142,6 +143,32 @@ $author = $additional_information['author'];
 	<span class="custom-cursor-label">
 	</span>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      const hsButton = document.querySelector('.hs-form-frame input[type="submit"]');
+      if (hsButton && !hsButton.classList.contains('svg-inserted')) {
+        hsButton.classList.add('svg-inserted');
+        hsButton.outerHTML = `
+          <button type="submit" aria-label="Enviar" style="background-color: #001F3F; padding: 0 18px; border-radius: 0 12px 12px 0; display: flex; align-items: center; justify-content: center; border: none;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19" stroke="#F5E6D2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 5L19 12L12 19" stroke="#F5E6D2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        `;
+      }
+    });
+  });
+
+  observer.observe(document.querySelector('.hs-form-frame'), {
+    childList: true,
+    subtree: true
+  });
+});
+</script>
 
 <?php wp_footer(); ?>
 

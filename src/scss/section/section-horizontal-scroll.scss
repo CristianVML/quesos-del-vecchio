@@ -78,6 +78,10 @@
   align-items: flex-end;
 
   @media only screen and (min-width: theme('screens.lg')) {
+    width: rem-calc(500);
+  }
+
+  @media only screen and (min-width: theme('screens.xl')) {
     width: rem-calc(900);
   }
 }
